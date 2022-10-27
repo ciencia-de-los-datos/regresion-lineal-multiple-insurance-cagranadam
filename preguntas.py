@@ -144,7 +144,7 @@ def pregunta_04():
     """
 
     # Importe mean_squared_error
-    from ____ import ____
+    from sklearn.metrics import mean_squared_error
 
     # Obtenga el pipeline optimo de la pregunta 3.
     gridSearchCV = pregunta_03()
@@ -153,20 +153,20 @@ def pregunta_04():
     X_train, X_test, y_train, y_test = pregunta_02()
 
     # Evalúe el modelo con los conjuntos de entrenamiento y prueba.
-    y_train_pred = ____.____(____)
-    y_test_pred = ____.____(____)
+    y_train_pred = gridSearchCV.predict(X_train)
+    y_test_pred = gridSearchCV.predict(X_test)
 
     # Compute el error cuadratico medio de entrenamiento y prueba. Redondee los
     # valores a dos decimales.
 
-    mse_train = ____(
-        _____,
-        _____,
+    mse_train = mean_squared_error(
+        y_train_pred,
+        y_train,
     ).round(2)
 
-    mse_test = ____(
-        _____,
-        _____,
+    mse_test = mean_squared_error(
+        y_test_pred,
+        y_test,
     ).round(2)
 
     # Retorne el error cuadrático medio para entrenamiento y prueba
